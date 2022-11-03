@@ -17,7 +17,7 @@ app.use(expressLayouts)
 require('./config')(app)
 
 const capitalize = require('./utils/capitalize')
-const projectName = 'super-manager-project'
+const projectName = 'super-manager-movies'
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`
 
