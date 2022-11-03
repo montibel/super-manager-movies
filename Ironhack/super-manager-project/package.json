@@ -1,6 +1,6 @@
 {
-  "name": "super-manager-proyect-server",
-  "version": "0.1.0",
+  "name": "super-manager-project-server",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node server.js",
