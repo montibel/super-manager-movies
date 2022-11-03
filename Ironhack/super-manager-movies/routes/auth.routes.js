@@ -24,6 +24,7 @@ router.get('/signup', isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post('/signup', isLoggedOut, (req, res) => {
+  console.log("hello",req.body)
   const { username, password } = req.body
 
   // Check that username, email, and password are provided
@@ -35,16 +36,16 @@ router.post('/signup', isLoggedOut, (req, res) => {
     return
   }
 
-  if (password.length < 6) {
+ /*  if (password.length < 6) {
     res.status(400).render('auth/signup', {
       errorMessage: 'Your password needs to be at least 6 characters long.',
-    })
+    }) */
 
-    return
-  }
+  /*   return
+  } */
 
   //   ! This regular expression checks password for special characters and minimum length
-  
+  /*
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
     res
@@ -54,7 +55,7 @@ router.post('/signup', isLoggedOut, (req, res) => {
     });
     return;
   }
-  
+  */
 
   // Search the database for a user with the username submitted in the form
   User.findOne({ username }).then(found => {
@@ -76,16 +77,16 @@ router.post('/signup', isLoggedOut, (req, res) => {
       })
       .then(user => {
         // Bind the user to the session object
-        req.session.user = user
-        res.redirect('/auth/login')
+        /* req.session.user = user */
+        res.redirect('/')
       })
       .catch(error => {
         if (error instanceof mongoose.Error.ValidationError) {
-          return res.status(400).render('auth/signup', { errorMessage: error.message })
+          return res.status(401).render('auth/signup', { errorMessage: error.message })
         }
         if (error.code === 11000) {
           return res
-            .status(400)
+            .status(402)
             .render('auth/signup', {
               errorMessage: 'Username need to be unique. The username you chose is already in use.',
             })
@@ -100,9 +101,10 @@ router.get('/login', isLoggedOut, (req, res) => {
   res.render('auth/login')
 })
 
+
 // POST /auth/login
 router.post('/login', isLoggedOut, (req, res, next) => {
-  const { username, email, password } = req.body
+  const { username, password } = req.body
 
   if (!username) {
     return res.status(400).render('auth/login', { errorMessage: 'Please provide your username.' })
@@ -110,16 +112,16 @@ router.post('/login', isLoggedOut, (req, res, next) => {
 
   // Here we use the same logic as above
   // - either length based parameters or we check the strength of a password
-  if (password.length < 8) {
+ /*  if (password.length < 8) {
     return res
       .status(400)
       .render('auth/login', {
         errorMessage: 'Your password needs to be at least 8 characters long.',
       })
-  }
+  } */
 
-  // Search the database for a user with the email submitted in the form
-  User.findOne({ email })
+  // Search the database for a user with the username submitted in the form
+  User.findOne({ username: username})
     .then(user => {
       // If the user isn't found, send an error message that user provided wrong credentials
       if (!user) {
@@ -129,12 +131,12 @@ router.post('/login', isLoggedOut, (req, res, next) => {
       // If user is found based on the username, check if the in putted password matches the one saved in the database
       bcrypt.compare(password, user.password).then(isSamePassword => {
         if (!isSamePassword) {
-          return res.status(400).render('auth/login', { errorMessage: 'Wrong credentials.' })
+          return res.status(401).render('auth/login', { errorMessage: 'Wrong credentials.' })
         }
 
         req.session.user = user
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect('/')
+        return res.redirect('/auth/profile')
       })
     })
 
@@ -146,15 +148,20 @@ router.post('/login', isLoggedOut, (req, res, next) => {
     })
 })
 
+router.get("/profile", (req, res) => {
+  console.log("HEY",req.session);
+  res.render('auth/profile', {user: req.session.user});
+})
+
 // GET /auth/logout
 router.get('/logout', isLoggedIn, (req, res) => {
   req.session.destroy(err => {
     if (err) {
-      res.status(500).render('auth/logout', { errorMessage: err.message })
+      res.status(501).render('auth/logout', { errorMessage: err.message })
       return
     }
 
-    res.redirect('/')
+    res.redirect('/auth/logout')
   })
 })
 
