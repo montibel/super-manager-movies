@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
+
 // ℹ️ Handles password encryption
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
@@ -15,6 +16,7 @@ const User = require('../models/User.model')
 const isLoggedOut = require('../middleware/isLoggedOut')
 const isLoggedIn = require('../middleware/isLoggedIn')
 
+
 // GET /auth/signup
 router.get('/signup', isLoggedOut, (req, res) => {
   res.render('auth/signup')
@@ -22,10 +24,10 @@ router.get('/signup', isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post('/signup', isLoggedOut, (req, res) => {
-  const { username, email, password } = req.body
+  const { username, password } = req.body
 
   // Check that username, email, and password are provided
-  if (username === '' || email === '' || password === '') {
+  if (username === '' || password === '') {
     res.status(400).render('auth/signup', {
       errorMessage: 'All fields are mandatory. Please provide your username, email and password.',
     })
@@ -42,7 +44,7 @@ router.post('/signup', isLoggedOut, (req, res) => {
   }
 
   //   ! This regular expression checks password for special characters and minimum length
-  /*
+  
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
     res
@@ -52,7 +54,7 @@ router.post('/signup', isLoggedOut, (req, res) => {
     });
     return;
   }
-  */
+  
 
   // Search the database for a user with the username submitted in the form
   User.findOne({ username }).then(found => {
@@ -75,7 +77,7 @@ router.post('/signup', isLoggedOut, (req, res) => {
       .then(user => {
         // Bind the user to the session object
         req.session.user = user
-        res.redirect('/')
+        res.redirect('/auth/login')
       })
       .catch(error => {
         if (error instanceof mongoose.Error.ValidationError) {
