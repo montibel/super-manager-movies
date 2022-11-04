@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2><%=  movies.title %></h2>
+
+<h4>genres:</h4>
+            <% for( let i = 0; i < movies.genres.length; i++ ) { %>
+                 <p><%= movies.genres[i].name %> </p>
+            <% } %>
+<a href="<%= movies.homepage %> "> homepage </a>
+<h4> release_date:<%= movies.release_date %> </h4>
+<h4> revenue:<%= movies.revenue %> </h4>
+<h4> runtime:<%= movies.runtime %> </h4>
+<% movies.spoken_languages.forEach(movie => { %>
+       <h4>spoken_languages: <%= movie.name %> </h4>
+<% }) %>
+<h4> status:<%= movies.status %> </h4>
+<h4> tagline:<%= movies.tagline %> </h4>
+ <% if ( movies.video === false) { %>
+     
+    <h4> video: not available</h4>
+<% }else {%>
+    <h4> video: available"</h4>
+    <%} %> 
+<h4> vote_average:<%= movies.vote_average %> </h4>
+<h4>vote_count:<%= movies.vote_count %> </h4>
+</body>
+</html>
