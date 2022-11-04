@@ -1,6 +1,7 @@
 /* public/stylesheets/style.css */
 body {
   display: flex;
+  flex-direction: column;
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   background-color: rgb(38, 38, 88);

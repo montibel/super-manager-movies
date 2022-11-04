@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+  <img src="https://image.tmdb.org/t/p/w500/<%= movies.backdrop_path %> " alt="img">  
 <h2><%=  movies.title %></h2>
 
 <h4>genres:</h4>
             <% for( let i = 0; i < movies.genres.length; i++ ) { %>
                  <p><%= movies.genres[i].name %> </p>
             <% } %>
-<a href="<%= movies.homepage %> "> homepage </a>
+
 <h4> release_date:<%= movies.release_date %> </h4>
 <h4> revenue:<%= movies.revenue %> </h4>
 <h4> runtime:<%= movies.runtime %> </h4>
@@ -29,7 +29,21 @@
 <% }else {%>
     <h4> video: available"</h4>
     <%} %> 
-<h4> vote_average:<%= movies.vote_average %> </h4>
+<h4>vote_average:<%= movies.vote_average %> </h4>
 <h4>vote_count:<%= movies.vote_count %> </h4>
+<% movies.production_companies.forEach(company => { %>
+   
+            <% if (company.logo_path === null) { %>
+                <p></p>
+            <% } else { %>
+                <img src="https://image.tmdb.org/t/p/w500/<%= company.logo_path %> " alt="logo" id="imo">
+           <% } %>
+    <h4><%= company.name %></h4>
+    <h4><%= company.origin_country %></h4>
+  
+    <% }) %>
+    <a href="<%= movies.homepage %> "> Homepage </a>
 </body>
 </html>
+
+
