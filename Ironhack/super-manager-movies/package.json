@@ -18,6 +18,7 @@
     "express-session": "^1.17.3",
     "mongoose": "^6.7.1",
     "morgan": "^1.10.0",
+    "moviedb-promise": "^3.2.1",
     "serve-favicon": "^2.5.0",
     "tmdbv3": "^0.1.2"
   },
