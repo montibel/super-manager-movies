@@ -34,7 +34,7 @@ router.get('/lists', (req, res) => {
   .catch(err => console.error(err))   
 });
 
-
+//  get movie by ID 
 router.get('/lists/:movieId', (req, res ) => {
    console.log(req.params.movieId)
    moviedb.movieInfo(req.params.movieId).then(
@@ -48,7 +48,7 @@ router.get('/lists/:movieId', (req, res ) => {
   
     });
 
-    
+
 
 
 
