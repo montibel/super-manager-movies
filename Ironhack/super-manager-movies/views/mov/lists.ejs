@@ -1,0 +1,11 @@
+<% for( let i = 0; i < listAPI.length; i++ ) { %>
+    <% if (listAPI[i].backdrop_path === null) { %>
+        <p></p>
+    <% } else { %>
+        <p> <img src=<%= `https://image.tmdb.org/t/p/w500/${listAPI[i].backdrop_path}`%>> </p> 
+    <% } %>
+    
+    <p><%= listAPI[i].title %> </p>
+    <p><%= listAPI[i].overview %> </p
+<% } %>
+
