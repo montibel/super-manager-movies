@@ -1,0 +1,19 @@
+<% for( let i = 0; i < similar.length; i++ ) { %>
+    
+    <% if (similar[i].backdrop_path === null) { %>
+      
+        <p></p>
+    
+        <% } else { %>
+       
+            <p> <img src=<%= `https://image.tmdb.org/t/p/w500/${similar[i].backdrop_path}`%>> </p> 
+    <% } %>
+    
+   
+    <p><a href="/movies/lists/<%= similar[i].id %> "><%= similar[i].title %>  </a></p>
+    
+    
+    <p><%= similar[i].overview %> </p
+
+        
+        <% } %>
