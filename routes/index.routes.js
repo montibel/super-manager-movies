@@ -10,7 +10,3 @@ module.exports = router;
 
 
 
-<<<<<<< HEAD
-=======
-// Test
->>>>>>> 22e7e0d (Go one folder up)

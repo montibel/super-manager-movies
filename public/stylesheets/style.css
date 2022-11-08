@@ -3,7 +3,6 @@ body {
   display: flex;
   flex-direction: column;
   padding: 50px;
-<<<<<<< HEAD
   font: 14px tahoma;
   background-color: rgb(25, 24, 25);
   color: rgb(221, 215, 215);
@@ -12,24 +11,11 @@ body {
 
 a:hover{
   color: red;
-=======
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-  background-color: rgb(38, 38, 88);
-  color: white;
-}
-h1{
-  display: flex;
-  flex-direction: row-reverse;
->>>>>>> 22e7e0d (Go one folder up)
 }
 
 a {
   display: flex;
-<<<<<<< HEAD
   color: rgb(254, 254, 254);
-=======
-  color: white;
->>>>>>> 22e7e0d (Go one folder up)
   text-decoration: none;
   font-size: 1.5em;
 }
@@ -39,15 +25,12 @@ form {
   width: 380px;
 }
 
-<<<<<<< HEAD
 .profiletext{
   text-align: center;
 }
 
 
 
-=======
->>>>>>> 22e7e0d (Go one folder up)
 form label {
   color: #666;
   display: inline-block;
@@ -67,13 +50,8 @@ form button {
 }
 
 form button {
-<<<<<<< HEAD
   background: #343d43;
   border: 1px solid #343c43;
-=======
-  background: #436c88;
-  border: 1px solid #3f5464;
->>>>>>> 22e7e0d (Go one folder up)
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
@@ -88,7 +66,6 @@ form button {
 
 form button:hover {
   background: #fff;
-<<<<<<< HEAD
   color: #0b1b26;
   transition: 0.3s ease background;
 }
@@ -107,30 +84,6 @@ ul li {
   height: 50px;
   padding: 50px;
   font: helvetica;
-=======
-  color: #43a3e6;
-  transition: 0.3s ease background;
-}
-
-.error {
-  background: #f02b63;
-  box-sizing: border-box;
-  color: #fff;
-  margin: 20px auto;
-  padding: 20px;
-  width: 100%;
-}
-
-ul {
-  border-bottom: 2px solid white;
-  height: 30px;
-  padding: 1em 0;
-  list-style-type: none;
-}
-
-ul li {
-  line-height: 20px;
->>>>>>> 22e7e0d (Go one folder up)
 }
 
 #to-right {
@@ -139,11 +92,7 @@ ul li {
 }
 
 #to-right span {
-<<<<<<< HEAD
   color: #0d202e;
-=======
-  color: #43a3e6;
->>>>>>> 22e7e0d (Go one folder up)
   font-size: 1.5em;
 }
 
@@ -168,9 +117,5 @@ ul li {
 
 #logout-form button {
   width: 120px;
-<<<<<<< HEAD
 }
 
-=======
-}
->>>>>>> 22e7e0d (Go one folder up)
