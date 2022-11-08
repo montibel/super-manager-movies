@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 22e7e0d (Go one folder up)
 const express = require("express");
 const router = express.Router();
 const movieModel = require("../models/Movie.model");
@@ -48,31 +44,13 @@ router.get("/lists/search", (req, res) => {
     })
     .catch((err) => console.error(err));
 });
-<<<<<<< HEAD
-/// 2. get Search with Axios
-// router.get("/lists/search", (req, res) => {
-//   console.log(req.query.search)
-//   // axios.get("https://api.themoviedb.org/3/search/movie?api_key=a5744544657b8f40d3829259594d6e5a&language=en-US&include_adult=false")
-//   //   .then((searchMovie) => {
-//   //         console.log(data)
-//   //     res.render("mov/test", { data: searchMovie.data.results });
-//       res.send("<h1>Hello</h1>")
-//   //   })
-//   //   .catch((err) => console.error(err));
-// });
-=======
->>>>>>> 22e7e0d (Go one folder up)
 
 
 
 //  get movie by ID with MovieDB Templet/library on Node 
 
 router.get("/lists/:movieId", (req, res) => {
-<<<<<<< HEAD
-  console.log(req.params.movieId);
-=======
   // console.log(req.params.movieId);
->>>>>>> 22e7e0d (Go one folder up)
   moviedb.movieInfo(req.params.movieId).then(
     function (movies) {
       res.render("mov/movie", { movies });
