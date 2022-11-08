@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/movie.css" />
-    <title>Document</title>
+
+
+ <title>Document</title>
 </head>
-
-<body id="moviesbody"> 
-    <div>
- <section>
-
+<body>
+   <a href="/movies/lists/<%= movies.id%>/similar ">similar</a>
+>>>>>>> 622f908 ( search is done- popular - similar)
     <% if (movies.backdrop_path === null) { %>
         <p></p>
     <% } else { %>
@@ -19,29 +12,29 @@
    <% } %>
   
 <h2><%=  movies.title %></h2>
-</div>
-<div>
-<h4>Genres:</h4>
+
+<h4>genres:</h4>
             <% for( let i = 0; i < movies.genres.length; i++ ) { %>
                  <p><%= movies.genres[i].name %> </p>
             <% } %>
-</div>
-<div><h4> Release Date: <%= movies.release_date %> </h4></div>
-<div><h4> Revenue: <%= movies.revenue %> </h4></div>
-<div><h4> Runtime: <%= movies.runtime %> </h4></div>
-<div><% movies.spoken_languages.forEach(movie => { %>
-    <div> <h4>Spoken languages: <%= movie.name %> </h4></div>
+
+<h4> release_date:<%= movies.release_date %> </h4>
+<h4> revenue:<%= movies.revenue %> </h4>
+<h4> runtime:<%= movies.runtime %> </h4>
+<% movies.spoken_languages.forEach(movie => { %>
+       <h4>spoken_languages: <%= movie.name %> </h4>
 <% }) %>
-<div><h4> Status: <%= movies.status %> </h4></div>
-<div><h4> Tagline: <%= movies.tagline %> </h4></div>
+<h4> status:<%= movies.status %> </h4>
+<h4> tagline:<%= movies.tagline %> </h4>
  <% if ( movies.video === false) { %>
      
-    <div><h4> Video: Not Available</h4></div>
+    <h4> video: not available</h4>
 <% }else {%>
-    <div><h4> Video: Available"</h4></div>
+    <h4> video: available"</h4>
     <%} %> 
-    <div><h4>Vote Average: <%= movies.vote_average %> </h4></div>
-        <div><h4>Vote Count: <%= movies.vote_count %> </h4></div>
+<h4>vote_average:<%= movies.vote_average %> </h4>
+<h4>vote_count:<%= movies.vote_count %> </h4>
+
 <% movies.production_companies.forEach(company => { %>
    
             <% if (company.logo_path === null) { %>
@@ -49,12 +42,13 @@
             <% } else { %>
                 <img src="https://image.tmdb.org/t/p/w500/<%= company.logo_path %> " alt="logo" id="imo">
            <% } %>
-           <div> <h4><%= company.name %></h4></div>
-            <div><h4><%= company.origin_country %></h4></div>
+
+    <h4><%= company.name %></h4>
+    <h4><%= company.origin_country %></h4>
   
     <% }) %>
+    <a href="<%= movies.homepage %> "> Homepage </a>
 </body>
-</section>
 </html>
 
 

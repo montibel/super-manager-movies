@@ -12,6 +12,8 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 app.use(expressLayouts)
+app.use(express.json()) // for json
+app.use(express.urlencoded({ extended: true })) // for form data
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require('./config')(app)
@@ -31,11 +33,6 @@ app.use('/auth', authRoutes)
 const moviesRoutes = require('./routes/movies.routes')
 app.use('/movies', moviesRoutes)
 
-app.use(function(req, res) {
-    res.render(__dirname + '/view/layout.ejs', {
-      name: 'Cat',
-    })
-  })
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app)
