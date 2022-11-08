@@ -1,0 +1,25 @@
+
+ <nav>
+  <ul>
+    <li id="to-right">
+      <a href="/auth/signup">Create a account</a>
+    </li>
+    <li id="to-right">
+      <a href="/">Home</a>
+    </li>
+  </ul>
+</nav>
+
+<form action="/auth/login" method="POST">
+  <label>
+    Username
+    <input type="text" name="username" />
+  </label>
+  <label>
+    Password
+    <input type="password" name="password" />
+  </label>
+  <button type="submit">LOG IN</button>
+</form>
+
+<% if(locals.errorMessage != null) {%><%= errorMessage %><%}%>

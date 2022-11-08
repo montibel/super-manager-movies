@@ -1,0 +1,122 @@
+/* public/stylesheets/style.css */
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  font: 14px tahoma;
+  background-color: rgb(25, 24, 25);
+  color: rgb(221, 215, 215);
+  background-size: 1500px 2500px;
+}
+
+a:hover{
+  color: red;
+}
+
+a {
+  display: flex;
+  color: rgb(254, 254, 254);
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+form {
+  margin: 30px auto;
+  width: 380px;
+}
+
+.profiletext{
+  text-align: center;
+}
+
+
+
+form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+form input,
+form button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+form button {
+  background: #343d43;
+  border: 1px solid #343c43;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+  width: 100%;
+}
+
+form button:hover {
+  background: #fff;
+  color: #0b1b26;
+  transition: 0.3s ease background;
+}
+
+
+ul {
+  border-bottom: 2px solid white;
+  height: 10px;
+  padding: 30px;
+  list-style-type: none;
+  font: helvetica;
+}
+
+ul li {
+  line-height: 1px;
+  height: 50px;
+  padding: 50px;
+  font: helvetica;
+}
+
+#to-right {
+  padding: 1em;
+  float: right;
+}
+
+#to-right span {
+  color: #0d202e;
+  font-size: 1.5em;
+}
+
+#form h2 {
+  display: flex;
+  justify-content: center;
+}
+
+#to-left {
+  float: left;
+}
+
+#to-left p a {
+  color: #000;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#logout-form {
+  display: inline;
+}
+
+#logout-form button {
+  width: 120px;
+}
+

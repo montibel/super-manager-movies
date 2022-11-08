@@ -1,0 +1,31 @@
+#moviesbody{
+    text-align: center;
+    padding: 5cm;
+    
+  }
+
+  .movie-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+ /*  img {
+    display:flex;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    padding: 20px;
+    width: 400px;
+  } */
+  
+  h4 {
+    text-align: center;
+  }
+  
+  section{
+    display: flex;
+    flex-direction: column;
+    background: rgba(16, 60, 170, 0.3) 
+   }
+
+  
