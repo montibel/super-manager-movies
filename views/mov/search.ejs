@@ -1,0 +1,20 @@
+
+
+<% for( let i = 0; i < data.length; i++ ) { %>
+    
+    <% if (data[i].backdrop_path === null) { %>
+      
+        <p></p>
+    
+        <% } else { %>
+       
+            <p> <img src=<%= `https://image.tmdb.org/t/p/w500/${data[i].backdrop_path}`%>> </p> 
+    <% } %>
+    
+   
+    <p><a href="/movies/lists/<%= data[i].id %> "><%= data[i].title %>  </p>
+    
+    
+    <p><%= data[i].overview %> </p
+
+        <% } %>

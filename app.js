@@ -12,6 +12,8 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 app.use(expressLayouts)
+app.use(express.json()) // for json
+app.use(express.urlencoded({ extended: true })) // for form data
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require('./config')(app)
