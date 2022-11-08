@@ -33,8 +33,9 @@ router.get("/lists", (req, res) => {
 });
 
 /// 1. get Search with theMovieDB Templet/library on Node 
+
 router.get("/lists/search", (req, res) => {
-  console.log(req.query.search);
+  
   moviedb
     .searchMovie({ query: req.query.search })
     .then((A) => {
@@ -50,6 +51,18 @@ router.get("/lists/search", (req, res) => {
 //  get movie by ID with MovieDB Templet/library on Node 
 
 router.get("/lists/:movieId", (req, res) => {
+  // console.log(req.params.movieId);
+  moviedb.movieInfo(req.params.movieId).then(
+    function (movies) {
+      res.render("mov/movie", { movies });
+    },
+    function (err) {
+      console.error(err);
+    }
+  );
+});
+
+router.post("/lists/:movieId", (req, res) => {
   // console.log(req.params.movieId);
   moviedb.movieInfo(req.params.movieId).then(
     function (movies) {
