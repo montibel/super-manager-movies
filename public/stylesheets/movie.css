@@ -1,31 +1,68 @@
-#moviesbody{
-    text-align: center;
-    padding: 5cm;
-    
-  }
 
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  padding: 15px 32px;
+  font-size: 16px;
+}
+
+a{
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
   .movie-title {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 30px;
   }
- /*  img {
-    display:flex;
-    border: 3px solid rgb(0, 0, 0);
+ 
+   #listimage {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid rgb(0, 0, 0);
     border-radius: 4px;
-    padding: 20px;
-    width: 400px;
-  } */
-  
+    padding: 1px;
+   
+
+  }  
+
+   .movieimage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+  a{
+    justify-content: center;
+    padding: 10px;
+  }
   h4 {
     text-align: center;
   }
-  
+  .textmovielist{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1,8em;
+    text-align: justify;
+    padding: 10px;
+  }
   section{
     display: flex;
     flex-direction: column;
-    background: rgba(16, 60, 170, 0.3) 
    }
 
   

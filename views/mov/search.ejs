@@ -1,5 +1,25 @@
 
 
+<link rel="stylesheet" href="/stylesheets/movie.css" />
+
+ <nav>
+    <ul>
+      <li id="to-right">
+        <a href="/auth/logout">Log Out</a>
+      </li>
+      <li id="to-right">
+        <a href="/">Home</a>
+      </li>
+      <li id="to-right">
+        <a href="/movies/lists">Find your movie</a>
+      </li>
+      <li id="to-right">
+        <a href="/movies/popular">Popular movies</a>
+      </li>
+    </ul>
+  </nav>
+
+
 <% for( let i = 0; i < data.length; i++ ) { %>
     
     <% if (data[i].backdrop_path === null) { %>
@@ -7,14 +27,12 @@
         <p></p>
     
         <% } else { %>
-       
-            <p> <img src=<%= `https://image.tmdb.org/t/p/w500/${data[i].backdrop_path}`%>> </p> 
+
+  <div> <a href="/movies/lists/<%= data[i].id %> "><%= data[i].title %>  </p> </div>    
+  <div id="listimage"><img src=<%= `https://image.tmdb.org/t/p/w500/${data[i].backdrop_path}`%>>  </div> 
     <% } %>
     
-   
-    <p><a href="/movies/lists/<%= data[i].id %> "><%= data[i].title %>  </p>
     
-    
-    <p><%= data[i].overview %> </p
+      <!-- <div> <%= data[i].overview %> </div> -->
 
         <% } %>
