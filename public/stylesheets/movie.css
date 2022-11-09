@@ -1,13 +1,4 @@
 
-
-
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  padding: 15px 32px;
-  font-size: 16px;
-}
-
 a{
   text-align: center;
 }
@@ -62,7 +53,10 @@ h3{
   }
   section{
     display: flex;
+    justify-content: center;
     flex-direction: column;
    }
-
+.new{
+  background-color: rgb(33, 32, 44);
+}
   
