@@ -33,7 +33,7 @@
   <a class="movie-title" href="/movies/lists/<%= movies.id%>/similar ">Find similar movies</a></h4>
 <% } %>
 
-<form action="/movies/lists/<%= movies.id %>/create" method="post">
+<div class="movie-title"><form action="/movies/lists/<%= movies.id %>/create" method="post">
   <div class="wrap">
       <div class="search">
           
@@ -49,14 +49,14 @@
          
       </div>
    </div>
- 
+  </div>
 </form>
 
 <!-- movies genre -->
 
 <div><h4 class="movie-title" >Genres</h4> 
 <% for( let i = 0; i < movies.genres.length; i++ ) { %>
-<p class="movie-title"><%= movies.genres[i].name %> </p>
+<h4 class="movie-title"><%= movies.genres[i].name %> </h4>
 <% } %>
 
 <!-- movie release date-->

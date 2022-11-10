@@ -7,6 +7,7 @@ body {
   background-color: #191819;
   color: rgb(221, 215, 215);
   background-size: 1500px 2500px;
+  align-items: justify;
 }
 
 a:hover{
@@ -50,10 +51,10 @@ form button {
 }
 
 form button {
-  background: #343d43;
-  border: 1px solid #343c43;
+  background: #000000;
+  border: 1px solid #022544;
   border-radius: 4px;
-  color: #fff;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
@@ -65,7 +66,7 @@ form button {
 }
 
 form button:hover {
-  background: #fff;
+  background: rgb(255, 234, 0);
   color: #0b1b26;
   transition: 0.3s ease background;
 }

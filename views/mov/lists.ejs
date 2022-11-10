@@ -16,7 +16,7 @@
     </ul>
   </nav>
 
-<form action="/movies/lists/search" method="get">
+<form class="movietitle" action="/movies/lists/search" method="get">
     
     <div class="wrap">
         <div class="search">
@@ -38,10 +38,10 @@
     
         <% } else { %>
        
- <div> <a href="/movies/lists/<%= listAPI[i].id %> "><%= listAPI[i].title %>  </a></div>
- <div class="textmovielist"> <h4><%= listAPI[i].overview %> </h4> </div>
-  <div class="movie-title"><img id= "listimage" src=<%= `https://image.tmdb.org/t/p/w500/${listAPI[i].backdrop_path}`%>>  </div>
+<div> <a href="/movies/lists/<%= listAPI[i].id %> "><%= listAPI[i].title %> </a></div>
+<div> <h4><%= listAPI[i].overview %> </h4> </div>
+<div class="movie-title"><img id= "listimage" src=<%= `https://image.tmdb.org/t/p/w500/${listAPI[i].backdrop_path}`%>>  </div>
     <% } %>
 
         <% } %>
-        </div>
+ </div>
