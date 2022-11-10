@@ -12,7 +12,7 @@
     height: 36px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: #ffffff;
   }
   
   .searchTerm:focus{
@@ -54,7 +54,7 @@
     border: 1px solid #fff;
     height: 36px;
     border-radius: 5px; 
-    color: #9DBFAF;
+    color: #ffffff;
     background-color: #191819;
 }
 

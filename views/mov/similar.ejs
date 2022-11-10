@@ -18,7 +18,7 @@
     </ul>
   </nav>
 
-
+  <div class="new">
 
 <% for( let i = 0; i < similar.length; i++ ) { %>
     
@@ -27,15 +27,12 @@
         <p></p>
     
         <% } else { %>
-        <p><a href="/movies/lists/<%= similar[i].id %> "><%= similar[i].title %>  </a></p>
+        <h2 class="movie-title"><a href="/movies/lists/<%= similar[i].id %> "><%= similar[i].title %></a></h2>
         <div class= "movie-title"><img id="listimage" src=<%= `https://image.tmdb.org/t/p/w500/${similar[i].backdrop_path}`%>>  </div>
     <% } %>
     
-   
+    <p class="movie-title"><%= similar[i].overview %> </p>
     
-    
-    
-    <p><%= similar[i].overview %> </p>
-
-        
         <% } %>
+
+      </div>

@@ -19,41 +19,44 @@
 
 
 
-        <form action="/movies/lists/<%= movies.id %>/create" method="post">
-        <div class="wrap">
-            <div class="search">
-                
-               <input class="searchTerm"
-                name="rating" 
-                id="re" 
-                type="number"  max="10.5"
-                min="0.5"
-                required 
-                placeholder="rate this movie">
-               <button  type="submit"class="searchButton material-symbols-outlined" >star</button>
-             
-               
-            </div>
-         </div>
-       
-    </form>
 
  <!-- movie title is ok -->
 
+ <div class="new">
+
  <div class="movie-title"> <h1><%=  movies.title %> </div></h1>
- <a class="movie-title" href="/movies/lists/<%= movies.id%>/similar ">Find similar movies</a></h4>
 
  <% if (movies.backdrop_path === null) { %>
   <p></p>
 <% } else { %>
   <div class="movie-title"><img id="listimage" src="https://image.tmdb.org/t/p/w500/<%= movies.backdrop_path %> " alt="img">  </div>
+  <a class="movie-title" href="/movies/lists/<%= movies.id%>/similar ">Find similar movies</a></h4>
 <% } %>
+
+<form action="/movies/lists/<%= movies.id %>/create" method="post">
+  <div class="wrap">
+      <div class="search">
+          
+         <input class="searchTerm"
+          name="rating" 
+          id="re" 
+          type="number"  max="10.0"
+          min="1.0"
+          required 
+          placeholder="rate this movie">
+         <button  type="submit"class="searchButton material-symbols-outlined" >star</button>
+       
+         
+      </div>
+   </div>
+ 
+</form>
 
 <!-- movies genre -->
 
-<h4 class="movie-title" >Genres</h4> 
+<div><h4 class="movie-title" >Genres</h4> 
 <% for( let i = 0; i < movies.genres.length; i++ ) { %>
-<p><%= movies.genres[i].name %> </p>
+<p class="movie-title"><%= movies.genres[i].name %> </p>
 <% } %>
 
 <!-- movie release date-->
@@ -79,7 +82,7 @@
 <% if (movies.runtime === null) { %>
 <p></p>
 <% } else { %>
-<h4 class="movie-title">Runtime: <%= movies.runtime %> </h4>
+<h4 class="movie-title">Runtime: <%= movies.runtime +"" + "min" %>  </h4>
 
 <% } %>
 
@@ -136,7 +139,7 @@
 <% if (company.logo_path === null) { %>
 <p></p>
 <% } else { %>
-<div class="movie-title"><img src="https://image.tmdb.org/t/p/w500/<%= company.logo_path %> " alt="logo" id="imo"> </div>
+<div class="movie-title"><img class="movieimage" src="https://image.tmdb.org/t/p/w500/<%= company.logo_path %> " alt="logo" id="imo"> </div>
 <% } %>
 
  <!-- company name -->
@@ -150,7 +153,7 @@
 <% if (company.origin_country === null) { %>
   <p>not available</p>
 <% } else { %>
-<h4 class="movie-title">Company country:<%= company.origin_country %> </h4>
+<h4 class="movie-title">Company country: <%= company.origin_country %> </h4>
 <% } %>
 
 <% }) %>

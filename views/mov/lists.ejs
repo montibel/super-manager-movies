@@ -21,16 +21,15 @@
     <div class="wrap">
         <div class="search">
             
-           <input class="searchTerm" type="search" name="search" id="sch" placeholder="search" required>
+           <input class="searchTerm" type="search" name="search" id="sch" placeholder="type your movie" required>
            <button  type="submit"class="searchButton" ><span class="material-symbols-outlined">search</span></button>
            
         </div>
      </div>
-     
-
+  
 </form>
 
-<section>
+<div class="new">
 <% for( let i = 0; i < listAPI.length; i++ ) { %>
     
     <% if (listAPI[i].backdrop_path === null) { %>
@@ -45,4 +44,4 @@
     <% } %>
 
         <% } %>
-</section>
+        </div>

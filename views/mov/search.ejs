@@ -19,7 +19,7 @@
     </ul>
   </nav>
 
-
+<div class="new">
 <% for( let i = 0; i < data.length; i++ ) { %>
     
     <% if (data[i].backdrop_path === null) { %>
@@ -28,11 +28,14 @@
     
         <% } else { %>
 
-  <div> <a href="/movies/lists/<%= data[i].id %> "><%= data[i].title %>  </p> </div>    
-  <div id="listimage"><img src=<%= `https://image.tmdb.org/t/p/w500/${data[i].backdrop_path}`%>>  </div> 
+  <div class="movie-title"> <h1><a href="/movies/lists/<%= data[i].id %> "><%= data[i].title %> </a></h1> </div>    
+
+  <div class="movie-title"><img id="listimage" src=<%= `https://image.tmdb.org/t/p/w500/${data[i].backdrop_path}`%>> </div>
+
+  <div> <p> <%= data[i].overview %> </p></div>
+
     <% } %>
-    
-    
-      <div> <%= data[i].overview %> </div>
 
         <% } %>
+
+</div>

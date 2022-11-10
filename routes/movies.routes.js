@@ -126,15 +126,6 @@ router.post("/lists/:tmbd_id/delete", async (req, res, next) => {
 
 
 
-
-
-  // update rating 
-  // router.get("/lists/:tmbd_id/edit ", (req, res) => {
- 
-  //   res.render("mov/rating")
-  // });
-
-
 router.post("/lists/:tmbd_id/edit",async (req, res, next) => {
   
   console.log(req.params.tmbd_id)

@@ -16,6 +16,7 @@ router.get('/signup', isLoggedOut, (req, res) => {
 // POST /auth/signup
 router.post('/signup', isLoggedOut, (req, res) => {
   const { username, password } = req.body
+  res.redirect('/auth/login')
   
 // Check that username, email, and password are provided
 if (username === '' || password === '') {
