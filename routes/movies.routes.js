@@ -77,4 +77,80 @@ router.get("/lists/:movieId/similar", (req, res) => {
     );
 });
 
+   // create rating 
+
+router.get("/lists/:movieId/create", async (req, res, next) => {
+  try {
+    const filter = { tmbd_id: req.params.movieId, createdby:req.session.user._id };
+    const movieDisplay = await movieModel.findOne(filter)
+    console.log(req.session)
+    console.log(movieDisplay)
+   
+    res.render("mov/rating",{data: movieDisplay});
+  } catch( err) { console.error(err) }
+ 
+  
+});
+
+router.post("/lists/:movieId/create", async (req, res, next ) => {
+ 
+  
+         
+  try {   var data ={
+          tmbd_id: req.params.movieId,
+          rating: req.body.rating,
+          createdby:req.session.user
+      }
+         await movieModel.create(data)
+
+      
+         res.redirect(`/movies/lists/${req.params.movieId}/create`)
+
+  } catch ( err) { console.error(err) }
+
+});
+
+// delete rating 
+
+router.post("/lists/:tmbd_id/delete", async (req, res, next) => {
+  
+  try {
+    const filter = { tmbd_id: req.params.tmbd_id, createdby:req.session.user._id };
+    await movieModel.findOneAndDelete(filter)
+     
+     
+    res.redirect(`/movies/lists/${req.params.tmbd_id}`);
+
+  }catch  (err) { console.error(err) }
+});
+
+
+
+
+
+  // update rating 
+  // router.get("/lists/:tmbd_id/edit ", (req, res) => {
+ 
+  //   res.render("mov/rating")
+  // });
+
+
+router.post("/lists/:tmbd_id/edit",async (req, res, next) => {
+  
+  console.log(req.params.tmbd_id)
+ 
+  console.log(req.body.rating)
+  
+  try {
+    const filter = { tmbd_id: req.params.tmbd_id, createdby:req.session.user._id };
+    
+    const updated = { rating: req.body.update };
+   
+    await movieModel.findOneAndUpdate(filter,updated, {new:true})
+   
+    res.redirect(`/movies/lists/${req.params.tmbd_id}/create`);
+   
+  }catch  (err) { console.error(err) }
+});
+
 module.exports = router;

@@ -1,0 +1,32 @@
+<%# This form is created to delete current rate %>
+
+<form action="/movies/lists/<%= data.tmbd_id %>/delete" method="post">
+  <h1 class="rat"><%= data.rating %>
+  <button id="btnDel" type="submit" class="searchButton material-symbols-outlined">
+    delete
+  </button></h1>
+</form>
+
+<form action="/movies/lists/<%=data.tmbd_id %>/edit" method="post">
+  <div class="wrap">
+    <div class="search">
+      <input
+        type="number"
+        max="10.5"
+        min="0.5"
+        name="update"
+        placeholder="update"
+        class="searchTerm"
+        required
+      />
+
+      <button type="submit" class="searchButton material-symbols-outlined">update</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+

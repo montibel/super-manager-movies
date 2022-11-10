@@ -18,11 +18,15 @@
 
 <form action="/movies/lists/search" method="get">
     
-    <label for="sch"></label>
-    
-    <input type="search" name="search" id="sch" placeholder="type the name of your movie">
-    <button  type="submit" >Find your movie</button>
-  
+    <div class="wrap">
+        <div class="search">
+            
+           <input class="searchTerm" type="search" name="search" id="sch" placeholder="search" required>
+           <button  type="submit"class="searchButton" ><span class="material-symbols-outlined">search</span></button>
+           
+        </div>
+     </div>
+     
 
 </form>
 
