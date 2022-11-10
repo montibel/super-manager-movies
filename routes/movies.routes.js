@@ -99,10 +99,10 @@ router.post("/lists/:movieId/create", async (req, res, next ) => {
   try {   var data ={
           tmbd_id: req.params.movieId,
           rating: req.body.rating,
-          createdby:req.session.user
+          createdby:req.session.user._id
       }
          await movieModel.create(data)
-
+         if(data)
       
          res.redirect(`/movies/lists/${req.params.movieId}/create`)
 

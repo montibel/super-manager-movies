@@ -4,7 +4,11 @@ const { Schema, model } = require("mongoose");
 const movieSchema = new Schema(
 
 
-  {    search: String}
+  {    rating: {type:String},
+       tmbd_id: {type:String},
+       createdby:{type: Schema.Types.ObjectId, ref:"User"}
+  
+  }
    
 
 );

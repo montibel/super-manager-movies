@@ -17,11 +17,19 @@
   </ul>
 </nav>
 
+
+
+        <form action="/movies/lists/<%= movies.id %>/create" method="post">
         <div class="wrap">
             <div class="search">
                 
-               <input class="searchTerm" name="rating" id="re" type="number"  max="10.5"
-               min="0.5" required placeholder="rate this movie">
+               <input class="searchTerm"
+                name="rating" 
+                id="re" 
+                type="number"  max="10.5"
+                min="0.5"
+                required 
+                placeholder="rate this movie">
                <button  type="submit"class="searchButton material-symbols-outlined" >star</button>
              
                
