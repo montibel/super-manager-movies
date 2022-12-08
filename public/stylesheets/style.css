@@ -3,14 +3,16 @@ body {
   display: flex;
   flex-direction: column;
   padding: 50px;
-  font: 14px georgia;
-  background-color: #191819;
-  color: rgb(221, 215, 215);
-  background-size: 1500px 2500px;
-  align-items: justify;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: #0f141e;
+  color: white;
 }
 
-a:hover{
+h1 {
+  color: white;
+}
+a:hover {
   color: rgb(255, 238, 0);
 }
 
@@ -26,11 +28,9 @@ form {
   width: 380px;
 }
 
-.profiletext{
+.profiletext {
   text-align: center;
 }
-
-
 
 form label {
   color: #666;
@@ -70,7 +70,6 @@ form button:hover {
   color: #0b1b26;
   transition: 0.3s ease background;
 }
-
 
 ul {
   border-bottom: 2px solid white;
@@ -119,4 +118,3 @@ ul li {
 #logout-form button {
   width: 120px;
 }
-
